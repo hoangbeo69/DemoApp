@@ -10,10 +10,11 @@ import reactor.core.publisher.Mono;
 @Configuration
 public class KafkaProducer {
 
-  @Bean
-  public Supplier<Mono<Greeting>> messageProducer() {
-    return ()->Mono.just(new Greeting(1L, "Hello1"));
-  }
+//  @Bean
+//  public Supplier<Greeting> messageProducer() {
+//
+//    return () -> new Greeting(1L,"Hello");
+//  }
 
 
 }
