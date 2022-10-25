@@ -1,0 +1,21 @@
+spring.cloud.stream:
+  function:
+    definition: messageProducer;messageConsumer
+  bindings:
+    messageProducer-out-0:
+      destination: message
+      producer:
+        use-native-encoding: true
+
+    messageConsumer-in-0:
+      destination: messageConsumer
+  kafka:
+    bindings:
+      messageProducer-out-0:
+        producer:
+          configuration:
+            value:
+              serializer: org.apache.kafka.common.serialization.LongSerializer
+    binder:
+      brokers:
+        - localhost:9092
